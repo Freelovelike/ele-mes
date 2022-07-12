@@ -1,0 +1,51 @@
+query Work($workId: Float!) {
+  work(id: $workId) {
+    id
+    createdAt
+    updatedAt
+    name
+    quantity
+    completedQuantity
+    startDate
+    endDate
+    status
+    demand {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+      quantity
+    }
+    operation {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+    owner {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      completedQuantity
+      startDate
+      endDate
+      status
+    }
+    resource {
+      id
+      createdAt
+      updatedAt
+      name
+      maximum
+    }
+    parentId
+    parentType
+    batch
+  }
+}

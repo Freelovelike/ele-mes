@@ -1,0 +1,47 @@
+mutation UpdateOperation($data: OperationInput!, $updateOperationId: Float!) {
+  updateOperation(data: $data, id: $updateOperationId) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      owner {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+      operationMaterials {
+        id
+        createdAt
+        updatedAt
+        type
+        priority
+        quantity
+      }
+      operationResources {
+        id
+        createdAt
+        updatedAt
+        quantity
+      }
+    }
+  }
+}

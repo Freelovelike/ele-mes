@@ -1,0 +1,32 @@
+mutation CreateDistribution($data: DistributionInput!) {
+  createDistribution(data: $data) {
+    data {
+      id
+      createdAt
+      updatedAt
+      leadTime
+      priority
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      origin {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+  }
+}

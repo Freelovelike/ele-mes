@@ -1,0 +1,33 @@
+query Distributions($conditions: [conditionType!], $page: Int, $size: Int) {
+  distributions(conditions: $conditions, page: $page, size: $size) {
+    data {
+      id
+      createdAt
+      updatedAt
+      priority
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      origin {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      leadTime
+    }
+    total
+  }
+}

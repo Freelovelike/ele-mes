@@ -1,0 +1,30 @@
+query Distribution($distributionId: Float!) {
+  distribution(id: $distributionId) {
+    id
+    createdAt
+    updatedAt
+    priority
+    item {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    location {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    origin {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    leadTime
+  }
+}

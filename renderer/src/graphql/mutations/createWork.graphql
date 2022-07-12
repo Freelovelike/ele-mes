@@ -1,0 +1,55 @@
+mutation CreateWork($data: WorkInput!) {
+  createWork(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+      quantity
+      completedQuantity
+      startDate
+      endDate
+      owner {
+        id
+        createdAt
+        updatedAt
+        name
+        quantity
+        completedQuantity
+        startDate
+        endDate
+        status
+      }
+      status
+      parentId
+      parentType
+      batch
+      resource {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+    }
+  }
+}

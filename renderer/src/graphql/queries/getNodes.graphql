@@ -1,0 +1,20 @@
+query GetNodes($itemName: String, $operationName: String) {
+  getNodes(itemName: $itemName, operationName: $operationName) {
+    errors {
+      field
+      message
+    }
+    data {
+      depth
+      operation
+      buffers
+      resources
+      type
+      relDepth
+      location
+      duration
+      durationPerUnit
+      quantity
+    }
+  }
+}

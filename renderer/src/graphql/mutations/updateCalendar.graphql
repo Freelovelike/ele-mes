@@ -1,0 +1,26 @@
+mutation UpdateCalendar($data: CalendarInput!, $updateCalendarId: Float!) {
+  updateCalendar(data: $data, id: $updateCalendarId) {
+    data {
+      id
+      createdAt
+      updatedAt
+      startTime
+      endTime
+      value
+      priority
+      weekday
+      endDate
+      startDate
+      calendarBucket {
+        createdAt
+        id
+        name
+        updatedAt
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

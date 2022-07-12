@@ -1,0 +1,39 @@
+mutation CreateOrder($data: OrderInput!) {
+  createOrder(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      name
+      priority
+      quantity
+      dueDate
+      status
+      createdAt
+      updatedAt
+      item {
+        id
+        name
+        createdAt
+        updatedAt
+        description
+      }
+      location {
+        id
+        name
+        description
+        updatedAt
+        createdAt
+      }
+      customer {
+        createdAt
+        description
+        id
+        name
+        updatedAt
+      }
+    }
+  }
+}

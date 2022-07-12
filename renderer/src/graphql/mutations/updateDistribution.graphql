@@ -1,0 +1,39 @@
+mutation UpdateDistribution(
+  $data: DistributionInput!
+  $updateDistributionId: Float!
+) {
+  updateDistribution(data: $data, id: $updateDistributionId) {
+    errors {
+      message
+      field
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      leadTime
+      priority
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      origin {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+  }
+}

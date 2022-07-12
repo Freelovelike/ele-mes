@@ -1,0 +1,20 @@
+query GetWorksByOperation($operationId: Float!) {
+  getWorksByOperation(operationId: $operationId) {
+    id
+    createdAt
+    updatedAt
+    name
+    quantity
+    completedQuantity
+    startDate
+    endDate
+    status
+    owner {
+      name
+    }
+    operation {
+      id
+      name
+    }
+  }
+}

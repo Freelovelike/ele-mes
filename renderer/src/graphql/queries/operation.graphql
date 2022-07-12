@@ -1,0 +1,59 @@
+query Operation($operationId: Float!) {
+  operation(id: $operationId) {
+    id
+    createdAt
+    updatedAt
+    name
+    type
+    duration
+    durationPerUnit
+    location {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    owner {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+    operationMaterials {
+      id
+      createdAt
+      updatedAt
+      type
+      priority
+      quantity
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+    operationResources {
+      id
+      createdAt
+      updatedAt
+      quantity
+    }
+    Works {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      completedQuantity
+      startDate
+      endDate
+      status
+    }
+  }
+}

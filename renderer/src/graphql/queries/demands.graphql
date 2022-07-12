@@ -1,0 +1,13 @@
+query Demands($page: Int, $size: Int, $conditions: [conditionType!]) {
+  demands(page: $page, size: $size, conditions: $conditions) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+      quantity
+    }
+    total
+  }
+}

@@ -1,0 +1,3 @@
+mutation DeleteoperationResources($ids: [Int!]!) {
+  deleteoperationResources(ids: $ids)
+}

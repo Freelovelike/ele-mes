@@ -1,0 +1,15 @@
+mutation CreateSupplier($data: SupplierInput!) {
+  createSupplier(data: $data) {
+    data {
+      createdAt
+      description
+      id
+      name
+      updatedAt
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

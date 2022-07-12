@@ -1,0 +1,19 @@
+query Customer($customerId: Float!) {
+  customer(id: $customerId) {
+    id
+    createdAt
+    updatedAt
+    name
+    description
+    order {
+      id
+      name
+      createdAt
+      updatedAt
+      priority
+      quantity
+      dueDate
+      status
+    }
+  }
+}

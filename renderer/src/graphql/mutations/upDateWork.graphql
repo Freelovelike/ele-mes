@@ -1,0 +1,57 @@
+mutation UpdateWork($data: WorkInput!, $updateWorkId: Float!) {
+  updateWork(data: $data, id: $updateWorkId) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      completedQuantity
+      startDate
+      endDate
+      status
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+      owner {
+        id
+        createdAt
+        updatedAt
+        name
+        quantity
+        completedQuantity
+        startDate
+        endDate
+        status
+      }
+      parentId
+      parentType
+      batch
+      resource {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+    }
+  }
+}

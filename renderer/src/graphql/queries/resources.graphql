@@ -1,0 +1,107 @@
+query Resources($conditions: [conditionType!], $page: Int, $size: Int) {
+  resources(conditions: $conditions, page: $page, size: $size) {
+    total
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      maximum
+      owner {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+        calendar {
+          id
+          startTime
+          endTime
+          value
+          priority
+          weekday
+        }
+      }
+      calendarBucket {
+        id
+        createdAt
+        updatedAt
+        name
+      }
+      skills {
+        id
+        createdAt
+        updatedAt
+        name
+      }
+      children {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+      works {
+        id
+        createdAt
+        updatedAt
+        name
+        quantity
+        completedQuantity
+        startDate
+        endDate
+        status
+        demand {
+          id
+          createdAt
+          updatedAt
+          name
+          description
+          quantity
+        }
+        operation {
+          id
+        }
+        resource {
+          id
+        }
+        batch
+        parentId
+        parentType
+        owner {
+          id
+          createdAt
+          updatedAt
+          name
+          quantity
+          completedQuantity
+          startDate
+          endDate
+          status
+          parentId
+          parentType
+          batch
+        }
+      }
+      calendar {
+        id
+        createdAt
+        updatedAt
+        startTime
+        endTime
+        startDate
+        endDate
+        value
+        priority
+        weekday
+      }
+    }
+  }
+}

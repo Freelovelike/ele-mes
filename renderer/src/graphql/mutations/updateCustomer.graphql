@@ -1,0 +1,25 @@
+mutation UpdateCustomer($data: CustomerInput!, $updateCustomerId: Float!) {
+  updateCustomer(data: $data, id: $updateCustomerId) {
+    data {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+      order {
+        id
+        name
+        createdAt
+        updatedAt
+        priority
+        quantity
+        dueDate
+        status
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mutation Deleteworks($ids: [Int!]!) {
+  deleteworks(ids: $ids)
+}

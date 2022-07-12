@@ -1,0 +1,31 @@
+mutation CreateOperationMaterial($data: OperationMaterialInput!) {
+  createOperationMaterial(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      type
+      quantity
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+    }
+  }
+}

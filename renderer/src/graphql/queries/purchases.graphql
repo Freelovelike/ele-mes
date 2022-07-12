@@ -1,0 +1,44 @@
+query Purchases($page: Int, $size: Int, $conditions: [conditionType!]) {
+  purchases(page: $page, size: $size, conditions: $conditions) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      status
+      quantity
+      orderingDate
+      receiptDate
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      supplier {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+    }
+    total
+  }
+}

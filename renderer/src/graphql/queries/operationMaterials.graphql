@@ -1,0 +1,33 @@
+query OperationMaterials(
+  $conditions: [conditionType!]
+  $page: Int
+  $size: Int
+) {
+  operationMaterials(conditions: $conditions, page: $page, size: $size) {
+    total
+    data {
+      id
+      createdAt
+      updatedAt
+      type
+      quantity
+      priority
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+    }
+  }
+}

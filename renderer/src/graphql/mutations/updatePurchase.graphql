@@ -1,0 +1,47 @@
+mutation UpdatePurchase($data: PurchaseInput!, $updatePurchaseId: Float!) {
+  updatePurchase(data: $data, id: $updatePurchaseId) {
+    errors {
+      message
+      field
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      status
+      quantity
+      orderingDate
+      receiptDate
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      supplier {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+    }
+  }
+}

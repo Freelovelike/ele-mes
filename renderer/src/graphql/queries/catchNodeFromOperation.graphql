@@ -1,0 +1,3 @@
+query CatchNodeFromOperation($operationName: String!) {
+  catchNodeFromOperation(operationName: $operationName)
+}

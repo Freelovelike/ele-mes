@@ -1,0 +1,12 @@
+query Items($conditions: [conditionType!], $page: Int, $size: Int) {
+  items(conditions: $conditions, page: $page, size: $size) {
+    data {
+      description
+      name
+      updatedAt
+      createdAt
+      id
+    }
+    total
+  }
+}

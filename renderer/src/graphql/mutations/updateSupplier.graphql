@@ -1,0 +1,15 @@
+mutation UpdateSupplier($data: SupplierInput!, $updateSupplierId: Float!) {
+  updateSupplier(data: $data, id: $updateSupplierId) {
+    data {
+      createdAt
+      description
+      id
+      name
+      updatedAt
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

@@ -1,0 +1,40 @@
+mutation UpdateTimeTable(
+  $updateTimeTableId: Float!
+  $data: timeTableUpdateInput!
+) {
+  updateTimeTable(id: $updateTimeTableId, data: $data) {
+    id
+    createdAt
+    updatedAt
+    work {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      completedQuantity
+      startDate
+      endDate
+      status
+    }
+    operation {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+    order {
+      id
+      createdAt
+      updatedAt
+      name
+      priority
+      quantity
+      dueDate
+      status
+    }
+  }
+}

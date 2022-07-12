@@ -1,0 +1,63 @@
+{
+  "private": true,
+  "main": "main/index.js",
+  "name": "mes",
+  "version": "1.0.0",
+  "author": "Hwc <3144622944@qq.com>",
+  "productName": "ElectronTypescriptNext",
+  "scripts": {
+    "clean": "rimraf dist main renderer/out renderer/.next",
+    "dev": "npm run build-electron && electron .",
+    "build-renderer": "next build renderer && next export renderer",
+    "build-electron": "tsc -p electron-src",
+    "build": "npm run build-renderer && npm run build-electron",
+    "pack-app": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "type-check": "tsc -p ./renderer/tsconfig.json && tsc -p ./electron-src/tsconfig.json",
+    "codegen": "graphql-codegen --config ./renderer/codegen.yml"
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-next": "^3.1.5"
+  },
+  "devDependencies": {
+    "@builder.io/partytown": "^0.6.2",
+    "@graphql-codegen/cli": "^2.8.0",
+    "@graphql-codegen/typescript-operations": "^2.5.1",
+    "@graphql-codegen/typescript-urql": "^3.6.1",
+    "@types/node": "^18.0.3",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "@urql/exchange-auth": "^0.1.7",
+    "@urql/exchange-graphcache": "^4.4.3",
+    "electron": "^19.0.8",
+    "electron-builder": "^23.3.1",
+    "graphql": "^16.5.0",
+    "graphql-tag": "^2.12.6",
+    "moment": "^2.29.4",
+    "next": "^12.2.2",
+    "next-urql": "^3.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-force-graph-2d": "^1.23.10",
+    "rimraf": "^3.0.2",
+    "rooks": "^5.11.8",
+    "styled-components": "^5.3.5",
+    "typescript": "^4.7.4",
+    "urql": "^2.2.2"
+  },
+  "homepage": "/",
+  "build": {
+    "asar": true,
+    "files": [
+      "main",
+      "renderer/out"
+    ],
+    "linux": {
+      "target": [
+        "appimage"
+      ]
+    }
+  },
+  "packageManager": "yarn@3.2.1"
+}

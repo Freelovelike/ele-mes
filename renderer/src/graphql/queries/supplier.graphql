@@ -1,0 +1,9 @@
+query Supplier($supplierId: Float!) {
+  supplier(id: $supplierId) {
+    id
+    createdAt
+    updatedAt
+    name
+    description
+  }
+}

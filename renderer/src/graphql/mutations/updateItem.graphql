@@ -1,0 +1,15 @@
+mutation UpdateItem($data: ItemInput!, $updateItemId: Float!) {
+  updateItem(data: $data, id: $updateItemId) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

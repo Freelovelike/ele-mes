@@ -1,0 +1,8 @@
+query Skill($skillId: Float!) {
+  skill(id: $skillId) {
+    id
+    createdAt
+    updatedAt
+    name
+  }
+}

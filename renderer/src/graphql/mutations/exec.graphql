@@ -1,0 +1,3 @@
+mutation Exec($locationName: String!, $quantity: Int!, $itemName: String!) {
+  exec(locationName: $locationName, quantity: $quantity, itemName: $itemName)
+}

@@ -1,0 +1,88 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: $APPNAME-deployment
+  namespace: $NAMESPACE
+  labels:
+    app: $APPNAME
+spec:
+  replicas: $REPICAS
+  selector:
+    matchLabels:
+      app: $APPNAME
+  template:
+    metadata:
+      labels:
+        app: $APPNAME
+    spec:
+      containers:
+      - name: $APPNAME
+        image: $VPC_REGISTRY/$ALIYUN_NAMESPACE/$IMAGE:$TAG
+        ports:
+        - containerPort: $PORT
+        envFrom:
+          - configMapRef:
+              name: $APPNAME-env
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: $APPNAME-service
+  namespace: $NAMESPACE
+spec:
+  ports:
+    - port: $PORT
+      protocol: TCP
+      targetPort: $PORT
+  selector:
+    app: $APPNAME
+  type: ClusterIP
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: $APPNAME-env
+  namespace: $NAMESPACE
+data:
+  NEXT_PUBLIC_SERVER_URL: '/graphql'
+---
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt
+  namespace: $NAMESPACE
+spec:
+  acme:
+    email: support@apsu.tech
+    server: https://acme-v02.api.letsencrypt.org/directory
+    preferredChain: "ISRG Root X1"
+    privateKeySecretRef:
+      name: apsu-corp
+    solvers:
+    - http01:
+        ingress:
+          class: nginx
+          serviceType: ClusterIP
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: $APPNAME-ingress
+  namespace: $NAMESPACE
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt"
+spec:
+  tls:
+  - hosts:
+    - $URL
+    secretName: $APPNAME-certs
+  rules:
+    - host: $URL
+      http:
+        paths:
+          - backend:
+              service:
+                name: $APPNAME-service
+                port:
+                  number: $PORT

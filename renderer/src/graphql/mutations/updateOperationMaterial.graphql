@@ -1,0 +1,34 @@
+mutation updateOperationMaterial(
+  $data: OperationMaterialInput!
+  $updateOperationMaterialId: Float!
+) {
+  updateOperationMaterial(data: $data, id: $updateOperationMaterialId) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      type
+      quantity
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+    }
+  }
+}

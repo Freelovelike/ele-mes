@@ -1,0 +1,36 @@
+query Orders($page: Int, $size: Int, $conditions: [conditionType!]) {
+  orders(page: $page, size: $size, conditions: $conditions) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      priority
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      customer {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      quantity
+      dueDate
+      status
+    }
+    total
+  }
+}

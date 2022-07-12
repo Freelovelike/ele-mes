@@ -1,0 +1,11 @@
+query Skills($conditions: [conditionType!], $page: Int, $size: Int) {
+  skills(conditions: $conditions, page: $page, size: $size) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+    }
+    total
+  }
+}

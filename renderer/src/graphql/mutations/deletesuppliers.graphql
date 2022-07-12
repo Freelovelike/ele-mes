@@ -1,0 +1,3 @@
+mutation Deletesuppliers($ids: [Int!]!) {
+  deletesuppliers(ids: $ids)
+}

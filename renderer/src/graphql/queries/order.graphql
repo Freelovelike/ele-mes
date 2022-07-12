@@ -1,0 +1,33 @@
+query Order($orderId: Float!) {
+  order(id: $orderId) {
+    id
+    createdAt
+    updatedAt
+    name
+    priority
+    item {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    location {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    customer {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    quantity
+    dueDate
+    status
+  }
+}

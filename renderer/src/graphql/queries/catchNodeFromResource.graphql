@@ -1,0 +1,3 @@
+query CatchNodeFromResource($resourceName: String!) {
+  catchNodeFromResource(resourceName: $resourceName)
+}

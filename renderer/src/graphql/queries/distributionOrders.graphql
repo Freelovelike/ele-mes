@@ -1,0 +1,48 @@
+query DistributionOrders(
+  $conditions: [conditionType!]
+  $page: Int
+  $size: Int
+) {
+  distributionOrders(conditions: $conditions, page: $page, size: $size) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      shippingDate
+      receiptDate
+      status
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      destination {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      origin {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+    }
+    total
+  }
+}

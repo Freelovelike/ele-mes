@@ -1,0 +1,9 @@
+query Item($itemId: Float!) {
+  item(id: $itemId) {
+    id
+    createdAt
+    updatedAt
+    name
+    description
+  }
+}

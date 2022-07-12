@@ -1,0 +1,29 @@
+mutation UpdateInventory($data: InventoryInput!, $updateInventoryId: Float!) {
+  updateInventory(data: $data, id: $updateInventoryId) {
+    data {
+      id
+      createdAt
+      updatedAt
+      onHand
+      Minimum
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+    errors {
+      message
+      field
+    }
+  }
+}

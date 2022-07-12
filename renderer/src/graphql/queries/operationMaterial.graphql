@@ -1,0 +1,26 @@
+query OperationMaterial($operationMaterialId: Float!) {
+  operationMaterial(id: $operationMaterialId) {
+    id
+    createdAt
+    updatedAt
+    type
+    quantity
+    priority
+    item {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    operation {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+  }
+}

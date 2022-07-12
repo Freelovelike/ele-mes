@@ -1,0 +1,40 @@
+query FindWorkByRes($resourceId: Float!) {
+  findWorkByRes(resourceId: $resourceId) {
+    id
+    createdAt
+    updatedAt
+    name
+    quantity
+    completedQuantity
+    startDate
+    endDate
+    status
+    operation {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+    resource {
+      id
+      createdAt
+      updatedAt
+      name
+      maximum
+    }
+    owner {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      completedQuantity
+      startDate
+      endDate
+      status
+    }
+  }
+}

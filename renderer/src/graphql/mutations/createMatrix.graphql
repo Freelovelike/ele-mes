@@ -1,0 +1,42 @@
+mutation CreateMatrix($data: MatrixInput!) {
+  createMatrix(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      priority
+      Duration
+      cost
+      resource {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+      to {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+      from {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+    }
+  }
+}

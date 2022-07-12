@@ -1,0 +1,15 @@
+mutation CreateLocation($data: LocationInput!) {
+  createLocation(data: $data) {
+    errors {
+      message
+      field
+    }
+    data {
+      id
+      name
+      createdAt
+      updatedAt
+      description
+    }
+  }
+}

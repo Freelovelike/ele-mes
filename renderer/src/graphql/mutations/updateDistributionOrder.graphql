@@ -1,0 +1,50 @@
+mutation UpdateDistributionOrder(
+  $data: DistributionOrderInput!
+  $updateDistributionOrderId: Float!
+) {
+  updateDistributionOrder(data: $data, id: $updateDistributionOrderId) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      shippingDate
+      receiptDate
+      status
+      destination {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      origin {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

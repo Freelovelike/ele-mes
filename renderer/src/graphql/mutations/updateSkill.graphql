@@ -1,0 +1,14 @@
+mutation UpdateSkill($data: SkillInput!, $updateSkillId: Float!) {
+  updateSkill(data: $data, id: $updateSkillId) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+    }
+  }
+}

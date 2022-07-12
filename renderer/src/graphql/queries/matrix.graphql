@@ -1,0 +1,36 @@
+query Matrix($matrixId: Float!) {
+  matrix(id: $matrixId) {
+    id
+    createdAt
+    updatedAt
+    name
+    priority
+    Duration
+    cost
+    resource {
+      id
+      createdAt
+      updatedAt
+      name
+      maximum
+    }
+    from {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+    to {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+  }
+}

@@ -1,0 +1,39 @@
+mutation UpdateOrder($data: OrderInput!, $updateOrderId: Float!) {
+  updateOrder(data: $data, id: $updateOrderId) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      name
+      createdAt
+      updatedAt
+      item {
+        name
+        id
+        createdAt
+        updatedAt
+        description
+      }
+      priority
+      location {
+        name
+        id
+        createdAt
+        updatedAt
+        description
+      }
+      customer {
+        name
+        id
+        createdAt
+        updatedAt
+        description
+      }
+      quantity
+      dueDate
+      status
+    }
+  }
+}

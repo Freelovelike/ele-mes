@@ -1,0 +1,15 @@
+mutation UpdateLocation($data: LocationInput!, $updateLocationId: Float!) {
+  updateLocation(data: $data, id: $updateLocationId) {
+    data {
+      id
+      name
+      description
+      createdAt
+      updatedAt
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

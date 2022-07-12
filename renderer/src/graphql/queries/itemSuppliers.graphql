@@ -1,0 +1,34 @@
+query ItemSuppliers($conditions: [conditionType!], $page: Int, $size: Int) {
+  itemSuppliers(conditions: $conditions, page: $page, size: $size) {
+    total
+    data {
+      id
+      createdAt
+      updatedAt
+      leadTime
+      priority
+      cost
+      supplier {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mutation CreateItem($data: ItemInput!) {
+  createItem(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      name
+      updatedAt
+      description
+    }
+  }
+}

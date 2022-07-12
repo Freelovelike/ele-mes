@@ -1,0 +1,20 @@
+query GetNodesByResource($resourceName: String!) {
+  getNodesByResource(resourceName: $resourceName) {
+    errors {
+      field
+      message
+    }
+    data {
+      depth
+      operation
+      buffers
+      type
+      location
+      relDepth
+      duration
+      quantity
+      durationPerUnit
+      resources
+    }
+  }
+}

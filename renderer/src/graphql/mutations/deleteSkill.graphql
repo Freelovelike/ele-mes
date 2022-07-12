@@ -1,0 +1,3 @@
+mutation Deleteskills($ids: [Int!]!) {
+  deleteskills(ids: $ids)
+}

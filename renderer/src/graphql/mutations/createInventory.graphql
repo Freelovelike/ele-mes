@@ -1,0 +1,29 @@
+mutation CreateInventory($data: InventoryInput!) {
+  createInventory(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      onHand
+      Minimum
+    }
+  }
+}

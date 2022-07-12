@@ -1,0 +1,9 @@
+query Location($locationId: Float!) {
+  location(id: $locationId) {
+    id
+    name
+    description
+    createdAt
+    updatedAt
+  }
+}

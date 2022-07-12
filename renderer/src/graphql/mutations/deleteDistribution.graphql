@@ -1,0 +1,3 @@
+mutation Deletedistributions($ids: [Int!]!) {
+  deletedistributions(ids: $ids)
+}

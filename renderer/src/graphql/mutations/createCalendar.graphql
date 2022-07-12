@@ -1,0 +1,26 @@
+mutation CreateCalendar($data: CalendarInput!) {
+  createCalendar(data: $data) {
+    data {
+      id
+      createdAt
+      updatedAt
+      startTime
+      endTime
+      value
+      priority
+      weekday
+      startDate
+      endDate
+      calendarBucket {
+        createdAt
+        id
+        name
+        updatedAt
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

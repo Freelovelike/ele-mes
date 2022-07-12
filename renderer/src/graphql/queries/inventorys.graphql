@@ -1,0 +1,26 @@
+query Inventorys($conditions: [conditionType!], $page: Int, $size: Int) {
+  inventorys(conditions: $conditions, page: $page, size: $size) {
+    total
+    data {
+      id
+      createdAt
+      updatedAt
+      item {
+        id
+        createdAt
+        updatedAt
+        description
+        name
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      onHand
+      Minimum
+    }
+  }
+}

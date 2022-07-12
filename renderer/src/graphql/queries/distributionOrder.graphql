@@ -1,0 +1,41 @@
+query DistributionOrder($distributionOrderId: Float!) {
+  distributionOrder(id: $distributionOrderId) {
+    id
+    createdAt
+    updatedAt
+    name
+    quantity
+    shippingDate
+    receiptDate
+    status
+    item {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    origin {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    destination {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    demand {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+      quantity
+    }
+  }
+}

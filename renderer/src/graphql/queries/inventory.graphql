@@ -1,0 +1,23 @@
+query Inventory($inventoryId: Float!) {
+  inventory(id: $inventoryId) {
+    id
+    createdAt
+    updatedAt
+    onHand
+    Minimum
+    item {
+      id
+      createdAt
+      updatedAt
+      name
+      description
+    }
+    location {
+      id
+      updatedAt
+      createdAt
+      description
+      name
+    }
+  }
+}

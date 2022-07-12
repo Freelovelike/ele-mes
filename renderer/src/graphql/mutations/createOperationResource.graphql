@@ -1,0 +1,30 @@
+mutation CreateOperationResource($data: OperationResourceInput!) {
+  createOperationResource(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      quantity
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+      resource {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+    }
+  }
+}

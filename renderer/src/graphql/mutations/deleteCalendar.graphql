@@ -1,0 +1,3 @@
+mutation Deletecalendars($ids: [Int!]!) {
+  deletecalendars(ids: $ids)
+}

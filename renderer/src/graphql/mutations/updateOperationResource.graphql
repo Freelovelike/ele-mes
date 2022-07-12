@@ -1,0 +1,33 @@
+mutation UpdateOperationResource(
+  $data: OperationResourceInput!
+  $updateOperationResourceId: Float!
+) {
+  updateOperationResource(data: $data, id: $updateOperationResourceId) {
+    errors {
+      message
+      field
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      quantity
+      operation {
+        id
+        createdAt
+        updatedAt
+        name
+        type
+        duration
+        durationPerUnit
+      }
+      resource {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+    }
+  }
+}

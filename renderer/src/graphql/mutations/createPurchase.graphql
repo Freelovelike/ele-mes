@@ -1,0 +1,47 @@
+mutation CreatePurchase($data: PurchaseInput!) {
+  createPurchase(data: $data) {
+    errors {
+      field
+      message
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      status
+      quantity
+      orderingDate
+      receiptDate
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      supplier {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+    }
+  }
+}

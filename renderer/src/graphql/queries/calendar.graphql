@@ -1,0 +1,20 @@
+query Calendar($calendarId: Float!) {
+  calendar(id: $calendarId) {
+    id
+    createdAt
+    updatedAt
+    startTime
+    endTime
+    endDate
+    startDate
+    value
+    priority
+    weekday
+    calendarBucket {
+      createdAt
+      id
+      name
+      updatedAt
+    }
+  }
+}

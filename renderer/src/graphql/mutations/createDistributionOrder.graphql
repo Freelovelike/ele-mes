@@ -1,0 +1,47 @@
+mutation CreateDistributionOrder($data: DistributionOrderInput!) {
+  createDistributionOrder(data: $data) {
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      quantity
+      shippingDate
+      receiptDate
+      status
+      destination {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      demand {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+        quantity
+      }
+      origin {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}

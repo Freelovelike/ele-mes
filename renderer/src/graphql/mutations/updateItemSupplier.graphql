@@ -1,0 +1,40 @@
+mutation UpdateItemSupplier(
+  $data: ItemSupplierInput!
+  $updateItemSupplierId: Float!
+) {
+  updateItemSupplier(data: $data, id: $updateItemSupplierId) {
+    errors {
+      message
+      field
+    }
+    data {
+      id
+      createdAt
+      updatedAt
+      leadTime
+      cost
+      supplier {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      location {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      item {
+        id
+        createdAt
+        updatedAt
+        name
+        description
+      }
+      priority
+    }
+  }
+}

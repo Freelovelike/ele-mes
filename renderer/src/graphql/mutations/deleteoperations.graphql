@@ -1,0 +1,3 @@
+mutation Deleteoperations($ids: [Int!]!) {
+  deleteoperations(ids: $ids)
+}

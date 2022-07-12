@@ -1,0 +1,38 @@
+query Operations($size: Int, $page: Int, $conditions: [conditionType!]) {
+  operations(size: $size, page: $page, conditions: $conditions) {
+    data {
+      duration
+      durationPerUnit
+      id
+      name
+      type
+      updatedAt
+      location {
+        id
+        name
+      }
+      owner {
+        name
+        id
+      }
+      operationResources {
+        id
+        resource {
+          id
+          name
+          maximum
+        }
+      }
+      operationMaterials {
+        id
+        priority
+        item {
+          id
+          name
+        }
+        type
+      }
+    }
+    total
+  }
+}

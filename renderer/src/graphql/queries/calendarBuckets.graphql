@@ -1,0 +1,30 @@
+query CalendarBuckets($conditions: [conditionType!], $page: Int, $size: Int) {
+  calendarBuckets(conditions: $conditions, page: $page, size: $size) {
+    total
+    data {
+      id
+      createdAt
+      updatedAt
+      name
+      calendars {
+        id
+        createdAt
+        updatedAt
+        startTime
+        endTime
+        startDate
+        endDate
+        value
+        priority
+        weekday
+      }
+      resource {
+        id
+        createdAt
+        updatedAt
+        name
+        maximum
+      }
+    }
+  }
+}

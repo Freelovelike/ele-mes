@@ -1,0 +1,24 @@
+query OperationResource($operationResourceId: Float!) {
+  operationResource(id: $operationResourceId) {
+    id
+    createdAt
+    updatedAt
+    quantity
+    operation {
+      id
+      createdAt
+      updatedAt
+      name
+      type
+      duration
+      durationPerUnit
+    }
+    resource {
+      id
+      createdAt
+      updatedAt
+      name
+      maximum
+    }
+  }
+}

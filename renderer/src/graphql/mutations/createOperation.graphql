@@ -1,0 +1,24 @@
+mutation CreateOperation($data: OperationInput!) {
+  createOperation(data: $data) {
+    data {
+      createdAt
+      duration
+      durationPerUnit
+      id
+      name
+      updatedAt
+      type
+      location {
+        id
+      }
+      owner {
+        id
+        name
+      }
+    }
+    errors {
+      field
+      message
+    }
+  }
+}
